@@ -1,14 +1,10 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const roboto = Roboto({
+  weight: ['400', '700'], // Selecionando os pesos desejados
   subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  variable: '--font-roboto', // Definição da variável CSS
 })
 
 export const metadata: Metadata = {
@@ -24,8 +20,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        style={{ background: '#95afc0' }}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${roboto.variable} antialiased`} // Aplicando a fonte Roboto
       >
         {children}
       </body>
