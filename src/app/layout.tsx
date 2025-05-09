@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
+import { getCssText } from '@/styles'
 
 const roboto = Roboto({
   weight: ['400', '700'], // Selecionando os pesos desejados
@@ -19,6 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
+      <head>
+        <style
+          id="stitches"
+          dangerouslySetInnerHTML={{ __html: getCssText() }}
+        />
+      </head>
       <body
         className={`${roboto.variable} antialiased`} // Aplicando a fonte Roboto
       >
