@@ -3,6 +3,9 @@ import { Roboto } from 'next/font/google'
 import { getCssText } from '@/styles'
 import { globalStyles } from '../styles/global'
 
+import Image from 'next/image'
+import { Container, Header } from '../styles/pages/app'
+
 globalStyles()
 
 const roboto = Roboto({
@@ -32,7 +35,13 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} antialiased`} // Aplicando a fonte Roboto
       >
-        {children}
+        <Container>
+          <Header>
+            <Image src="/logo.svg" width={150} height={50} alt="Logo" />
+          </Header>
+
+          {children}
+        </Container>
       </body>
     </html>
   )
