@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Roboto } from 'next/font/google'
 import { getCssText } from '@/styles'
+import { globalStyles } from '../styles/global'
+
+globalStyles()
 
 const roboto = Roboto({
   weight: ['400', '700'], // Selecionando os pesos desejados
