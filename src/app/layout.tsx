@@ -37,7 +37,13 @@ export default function RootLayout({
       >
         <Container>
           <Header>
-            <Image src="/logo.svg" width={150} height={50} alt="Logo" />
+            <Image
+              src="/logo.svg"
+              width={150}
+              height={50}
+              alt="Logo"
+              priority
+            />
           </Header>
 
           {children}
