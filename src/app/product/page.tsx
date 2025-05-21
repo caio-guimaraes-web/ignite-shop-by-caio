@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function ProductPage() {
   return (
     <div>
@@ -5,10 +7,10 @@ export default function ProductPage() {
       <p>Selecione um produto para ver detalhes.</p>
       <ul>
         <li>
-          <a href="/product/1">Produto 1</a>
+          <Link href="/product/1">Produto 1</Link>
         </li>
         <li>
-          <a href="/product/2">Produto 2</a>
+          <Link href="/product/2">Produto 2</Link>
         </li>
       </ul>
     </div>

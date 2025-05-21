@@ -12,6 +12,7 @@ export default function Product() {
 'use client'
 
 import { useParams } from 'next/navigation'
+import Link from 'next/link'
 
 export default function ProductDetailPage() {
   const params = useParams()
@@ -20,7 +21,7 @@ export default function ProductDetailPage() {
     <div>
       <h1>Produto ID: {params.id}</h1>
       <p>Detalhes do produto {params.id}.</p>
-      <a href="/product">Voltar para Produtos</a>
+      <Link href="/product">Voltar para Produtos</Link>
     </div>
   )
 }
