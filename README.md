@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ignite Shop — Case Study with Next.js ⚡
 
-## Getting Started
+**Case study with Next.js: Optimizing performance with SSR, ISR, SPA strategies + Stripe integration & Stitches styling.**
 
-First, run the development server:
+---
+
+## 🔍 About this case study
+
+This project simulates a product display page using Stripe's product data. The goal is to study and demonstrate **different data fetching strategies** in modern Next.js (App Router), showing performance tradeoffs and practical implementations.
+
+---
+
+## ⚙️ Technologies
+
+- **Next.js (App Router)**
+- **Stitches (CSS-in-JS)**
+- **Stripe SDK**
+- **TypeScript**
+
+---
+
+## 📊 What is being studied?
+
+This case walks through **3 strategies** for fetching data with Next.js:
+
+---
+
+### ✅ Commit 1 – SSR (Server-Side Rendering)
+
+**Approach**: Fetching Stripe data directly on the server component and passing it to a client component.
+
+- 🔗 [View Commit](https://github.com/caio-guimaraes-web/ignite-shop-by-caio/commit/641500ad5587f0b8bd419d5399b183669b318f64)
+
+- 🧠 _Highlights_:
+  - Simple server-side rendering.
+  - Stripe SDK fetch inside the same `page.tsx`.
+  - Ideal starting point for separation of concerns.
+
+---
+
+### ✅ Commit 2 – ISR with `export const revalidate`
+
+**Approach**: Using Incremental Static Regeneration with a static revalidation time.
+
+- 🔗 [View Commit](https://github.com/caio-guimaraes-web/ignite-shop-by-caio/commit/afa2653226ff2892f1e02f285747be0e98cab341)
+
+- 🧠 _Highlights_:
+  - Uses `export const revalidate = 10` for automatic background regeneration.
+  - Great for performance and predictable cache control.
+  - Timestamp added to visualize regeneration cycle.
+
+---
+
+### ✅ Commit 3 – ISR with fetch abstraction (Recommended)
+
+**Approach**: Moves fetching logic to a separate module to keep server component clean and allow better testability.
+
+- 🔗 [View Commit](https://github.com/caio-guimaraes-web/ignite-shop-by-caio/commit/d2f0c957c2e0c68cd7a62452fad82f3329de3b59)
+
+- 🧠 _Highlights_:
+  - Isolates fetching logic from rendering.
+  - Stripe SDK fetch now properly abstracted.
+  - Uses `next.revalidate` in a clean, production-friendly way.
+
+---
+
+## 🛠️ Setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ✍️ Author
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Made with 💻 and ☕ by [Caio Guimarães](https://github.com/caio-guimaraes-web/)
